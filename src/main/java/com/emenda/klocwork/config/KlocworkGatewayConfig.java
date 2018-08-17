@@ -1,16 +1,18 @@
 
 package com.emenda.klocwork.config;
 
+<<<<<<< HEAD
 import hudson.Extension;
 import hudson.model.AbstractDescribableImpl;
 import hudson.model.Descriptor;
 import org.kohsuke.stapler.DataBoundConstructor;
+=======
 import org.kohsuke.stapler.DataBoundConstructor;
 
-import java.util.List;
 import hudson.Extension;
 import hudson.model.AbstractDescribableImpl;
 import hudson.model.Descriptor;
+>>>>>>> add_build_action
 
 import java.util.List;
 

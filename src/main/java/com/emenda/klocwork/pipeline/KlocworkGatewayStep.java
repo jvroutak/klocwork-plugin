@@ -1,16 +1,25 @@
 package com.emenda.klocwork.pipeline;
 
 import com.emenda.klocwork.KlocworkConstants;
+<<<<<<< HEAD
 import com.emenda.klocwork.KlocworkGatewayPublisher;
+=======
+>>>>>>> add_build_action
 import com.emenda.klocwork.config.KlocworkGatewayConfig;
 import com.google.inject.Inject;
+<<<<<<< HEAD
+=======
+
 import org.jenkinsci.plugins.workflow.steps.AbstractStepDescriptorImpl;
 import org.jenkinsci.plugins.workflow.steps.AbstractStepImpl;
 import org.jenkinsci.plugins.workflow.steps.AbstractSynchronousNonBlockingStepExecution;
 import org.jenkinsci.plugins.workflow.steps.StepContextParameter;
 import org.jenkinsci.plugins.workflow.structs.DescribableHelper;
 import org.kohsuke.stapler.DataBoundConstructor;
+
 import javax.annotation.Nonnull;
+
+>>>>>>> add_build_action
 import hudson.EnvVars;
 import hudson.Extension;
 import hudson.FilePath;

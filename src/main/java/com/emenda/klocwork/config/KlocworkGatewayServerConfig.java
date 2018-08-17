@@ -1,13 +1,20 @@
 
 package com.emenda.klocwork.config;
 
+<<<<<<< HEAD
+=======
 import org.kohsuke.stapler.DataBoundConstructor;
+
+>>>>>>> add_build_action
 import hudson.Extension;
 import hudson.model.AbstractDescribableImpl;
 import hudson.model.Descriptor;
 import hudson.model.Result;
+<<<<<<< HEAD
 import org.kohsuke.stapler.DataBoundConstructor;
 
+=======
+>>>>>>> add_build_action
 
 public class KlocworkGatewayServerConfig extends AbstractDescribableImpl<KlocworkGatewayServerConfig> {
 

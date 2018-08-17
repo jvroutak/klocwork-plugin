@@ -3,8 +3,12 @@ package com.emenda.klocwork;
 import com.emenda.klocwork.config.KlocworkReportConfig;
 import com.emenda.klocwork.config.KlocworkServerLoadConfig;
 import com.emenda.klocwork.util.KlocworkUtil;
+<<<<<<< HEAD
 import hudson.*;
+=======
+
 import jenkins.tasks.SimpleBuildStep;
+
 import hudson.AbortException;
 import hudson.Launcher;
 import hudson.Launcher.ProcStarter;
@@ -16,21 +20,29 @@ import hudson.util.ArgumentListBuilder;
 import hudson.util.FormValidation;
 import hudson.matrix.MatrixProject;
 import hudson.model.AbstractBuild;
+>>>>>>> add_build_action
 import hudson.model.AbstractProject;
 import hudson.model.Run;
 import hudson.model.TaskListener;
 import hudson.tasks.BuildStepDescriptor;
+<<<<<<< HEAD
 import hudson.tasks.Builder;
 import jenkins.tasks.SimpleBuildStep;
+=======
+
 import net.sf.json.JSONArray;
 import net.sf.json.JSONException;
+>>>>>>> add_build_action
 import net.sf.json.JSONObject;
+
 import org.apache.commons.lang3.StringUtils;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.DataBoundSetter;
 import org.kohsuke.stapler.StaplerRequest;
 
 import java.io.IOException;
+<<<<<<< HEAD
+=======
 import java.io.StringReader;
 import java.lang.InterruptedException;
 import java.util.ArrayList;
@@ -38,6 +50,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+>>>>>>> add_build_action
 
 public class KlocworkServerLoadBuilder extends Builder implements SimpleBuildStep {
     // TODO - artifact build.log, parse.log, kwloaddb.log if build fails

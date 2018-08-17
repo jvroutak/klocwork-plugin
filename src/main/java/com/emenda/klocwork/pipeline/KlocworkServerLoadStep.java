@@ -1,8 +1,11 @@
 package com.emenda.klocwork.pipeline;
 
 import com.emenda.klocwork.KlocworkConstants;
+<<<<<<< HEAD
 import com.emenda.klocwork.KlocworkServerLoadBuilder;
+=======
 import com.emenda.klocwork.config.KlocworkReportConfig;
+>>>>>>> add_build_action
 import com.emenda.klocwork.config.KlocworkServerLoadConfig;
 import com.google.inject.Inject;
 import hudson.EnvVars;
@@ -19,6 +22,8 @@ import org.kohsuke.stapler.DataBoundConstructor;
 
 import javax.annotation.Nonnull;
 
+<<<<<<< HEAD
+=======
 import hudson.AbortException;
 import hudson.EnvVars;
 import hudson.Extension;
@@ -26,6 +31,8 @@ import hudson.FilePath;
 import hudson.Launcher;
 import hudson.model.Run;
 import hudson.model.TaskListener;
+
+>>>>>>> add_build_action
 
 public class KlocworkServerLoadStep extends AbstractStepImpl {
 

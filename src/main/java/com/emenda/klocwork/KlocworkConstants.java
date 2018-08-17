@@ -5,6 +5,7 @@ public class KlocworkConstants {
 
     public static final String ICON_URL = "/plugin/klocwork/icons/klocwork-24.gif";
     public static final String DISPLAY_NAME = "Klocwork Server";
+
     public static final String KLOCWORK_BUILD_WRAPPER_DISPLAY_NAME =
         "Klocwork - Build Environment Settings";
 
@@ -18,10 +19,13 @@ public class KlocworkConstants {
         "Klocwork - Cross-Project Issue Sync";
     public static final String KLOCWORK_QUALITY_GATEWAY_DISPLAY_NAME =
         "Klocwork - Quality Gateway";
+<<<<<<< HEAD
     public static final String KLOCWORK_CI_BUILDER_NAME =
+=======
     public static final String KLOCWORK_REPORT_PUBLISHER_DISPLAY_NAME =
         "Klocwork - Report Publisher";
     public static final String KLOCWORK_DESKTOP_BUILDER_NAME =
+>>>>>>> add_build_action
             "Klocwork - Incremental Diff Analysis";
 
     public static final String KLOCWORK_ISSUE_CRITICAL = "Critical";

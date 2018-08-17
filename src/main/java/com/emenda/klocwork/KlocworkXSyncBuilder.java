@@ -2,13 +2,10 @@ package com.emenda.klocwork;
 
 import com.emenda.klocwork.config.KlocworkXSyncConfig;
 import com.emenda.klocwork.util.KlocworkUtil;
-<<<<<<< HEAD
 import hudson.*;
 import hudson.model.AbstractProject;
 import hudson.model.Run;
 import hudson.model.TaskListener;
-=======
-
 import hudson.AbortException;
 import hudson.Launcher;
 import hudson.EnvVars;
@@ -18,20 +15,14 @@ import hudson.model.AbstractProject;
 import hudson.model.Run;
 import hudson.model.TaskListener;
 import hudson.tasks.Builder;
->>>>>>> add_build_action
 import hudson.tasks.BuildStepDescriptor;
 import hudson.tasks.Builder;
 import jenkins.tasks.SimpleBuildStep;
 import net.sf.json.JSONObject;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.StaplerRequest;
-
 import java.io.IOException;
-<<<<<<< HEAD
-
-=======
 import java.lang.InterruptedException;
->>>>>>> add_build_action
 
 public class KlocworkXSyncBuilder extends Builder implements SimpleBuildStep {
 

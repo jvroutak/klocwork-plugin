@@ -3,26 +3,17 @@ package com.emenda.klocwork.config;
 
 import com.emenda.klocwork.KlocworkConstants;
 import com.emenda.klocwork.util.KlocworkUtil;
-<<<<<<< HEAD
-=======
-
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.DataBoundSetter;
-
 import org.apache.commons.lang3.StringUtils;
-
->>>>>>> add_build_action
 import hudson.EnvVars;
 import hudson.Extension;
 import hudson.FilePath;
 import hudson.model.AbstractDescribableImpl;
 import hudson.model.Descriptor;
 import hudson.util.ArgumentListBuilder;
-<<<<<<< HEAD
 import org.apache.commons.lang3.StringUtils;
 import org.kohsuke.stapler.DataBoundConstructor;
-=======
->>>>>>> add_build_action
 
 public class KlocworkServerLoadConfig extends AbstractDescribableImpl<KlocworkServerLoadConfig> {
 

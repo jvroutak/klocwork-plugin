@@ -2,7 +2,6 @@
 package com.emenda.klocwork.config;
 
 import com.emenda.klocwork.KlocworkConstants;
-<<<<<<< HEAD
 import hudson.Extension;
 import hudson.model.AbstractDescribableImpl;
 import hudson.model.Descriptor;
@@ -10,7 +9,6 @@ import hudson.util.FormValidation;
 import org.apache.commons.lang3.StringUtils;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.QueryParameter;
-=======
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -22,7 +20,6 @@ import hudson.Extension;
 import hudson.model.AbstractDescribableImpl;
 import hudson.model.Descriptor;
 import hudson.util.FormValidation;
->>>>>>> add_build_action
 
 import javax.servlet.ServletException;
 import java.io.IOException;

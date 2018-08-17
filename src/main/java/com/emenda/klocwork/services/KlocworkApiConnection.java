@@ -1,5 +1,6 @@
 package com.emenda.klocwork.services;
 
+<<<<<<< HEAD
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
@@ -9,12 +10,33 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 import java.io.*;
 import java.net.ConnectException;
+=======
+import java.lang.String;
+
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.net.URL;
+>>>>>>> add_build_action
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
+<<<<<<< HEAD
+=======
+import java.net.ConnectException;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+>>>>>>> add_build_action
 
 public class KlocworkApiConnection {
 

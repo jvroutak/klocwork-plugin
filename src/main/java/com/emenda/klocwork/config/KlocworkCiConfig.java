@@ -222,6 +222,7 @@ public class KlocworkCiConfig extends AbstractDescribableImpl<KlocworkCiConfig> 
                     envVars.expand(getDiffFileList(envVars)),
                     envVars.expand(KlocworkUtil.getBuildSpecPath(buildSpec, workspace))));
             return String.join(" ", fileList); // TODO: is Java 8 OK?
+            return String.join(" ", fileList);
         } catch (IOException | InterruptedException ex) {
             throw new AbortException(ex.getMessage());
         }

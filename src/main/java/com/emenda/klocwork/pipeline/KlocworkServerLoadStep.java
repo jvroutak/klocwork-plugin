@@ -2,6 +2,7 @@ package com.emenda.klocwork.pipeline;
 
 import com.emenda.klocwork.KlocworkConstants;
 import com.emenda.klocwork.KlocworkServerLoadBuilder;
+import com.emenda.klocwork.config.KlocworkReportConfig;
 import com.emenda.klocwork.config.KlocworkServerLoadConfig;
 import com.google.inject.Inject;
 import hudson.EnvVars;
@@ -18,23 +19,32 @@ import org.kohsuke.stapler.DataBoundConstructor;
 
 import javax.annotation.Nonnull;
 
+import hudson.AbortException;
+import hudson.EnvVars;
+import hudson.Extension;
+import hudson.FilePath;
+import hudson.Launcher;
+import hudson.model.Run;
+import hudson.model.TaskListener;
 
 public class KlocworkServerLoadStep extends AbstractStepImpl {
 
     private KlocworkServerLoadConfig serverConfig;
+    private KlocworkReportConfig reportConfig;
 
     @DataBoundConstructor
     public KlocworkServerLoadStep(KlocworkServerLoadConfig serverConfig) {
         this.serverConfig = serverConfig;
+        this.reportConfig = new KlocworkReportConfig(true);
     }
 
-    // @DataBoundSetter
-    // public void setServerConfig(KlocworkServerLoadConfig serverConfig) {
-    //     this.serverConfig = serverConfig;
-    // }
+    @DataBoundSetter
+    public void setReportConfig(KlocworkReportConfig reportConfig) {
+        this.reportConfig = reportConfig;
+    }
 
     public KlocworkServerLoadConfig getServerConfig() { return serverConfig; }
-
+    public KlocworkReportConfig getReportConfig() { return reportConfig; }
 
     private static class KlocworkServerLoadStepExecution extends AbstractSynchronousNonBlockingStepExecution<Void> {
 
@@ -65,7 +75,15 @@ public class KlocworkServerLoadStep extends AbstractStepImpl {
         @Override
         protected Void run() throws Exception {
 
-            KlocworkServerLoadBuilder builder = new KlocworkServerLoadBuilder(step.getServerConfig());
+            if (step.getServerConfig() == null) {
+                throw new AbortException("Klocwork server configuration is null. " +
+                    "Please update klocworkIntegrationStep2 pipeline step. " +
+                    "This is due to an update to include a Klocwork trend chart. " +
+                    "Sorry for any inconvenience caused! Enjoy the chart :)");
+            }
+
+            KlocworkServerLoadBuilder builder = new KlocworkServerLoadBuilder(
+                step.getServerConfig(), step.getReportConfig());
             builder.perform(build, env, workspace, launcher, listener);
             return null;
         }

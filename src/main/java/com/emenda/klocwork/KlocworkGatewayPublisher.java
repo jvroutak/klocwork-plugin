@@ -6,6 +6,13 @@ import com.emenda.klocwork.services.KlocworkApiConnection;
 import com.emenda.klocwork.util.KlocworkUtil;
 import com.emenda.klocwork.util.KlocworkXMLReportParser;
 import hudson.*;
+import com.emenda.klocwork.util.KlocworkUtil;
+import com.emenda.klocwork.util.KlocworkXMLReportParser;
+import hudson.AbortException;
+import hudson.Launcher;
+import hudson.EnvVars;
+import hudson.Extension;
+import hudson.FilePath;
 import hudson.model.AbstractProject;
 import hudson.model.Result;
 import hudson.model.Run;
@@ -17,6 +24,9 @@ import jenkins.tasks.SimpleBuildStep;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.commons.lang3.StringUtils;
+import jenkins.tasks.SimpleBuildStep;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.StaplerRequest;
 
@@ -24,6 +34,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
+import java.lang.InterruptedException;
 
 public class KlocworkGatewayPublisher extends Publisher implements SimpleBuildStep {
 
@@ -73,36 +84,15 @@ public class KlocworkGatewayPublisher extends Publisher implements SimpleBuildSt
         boolean stopBuild = false;
         if (gatewayConfig.getEnableServerGateway()) {
             logger.logMessage("Performing Klocwork Server Gateway");
+            // check env vars are set, otherwise this throws AbortException
+            KlocworkUtil.validateServerConfigs(envVars);
             for (KlocworkGatewayServerConfig pfConfig : gatewayConfig.getGatewayServerConfigs()) {
-                String request = "action=search&project=" + envVars.get(KlocworkConstants.KLOCWORK_PROJECT);
-                if (!StringUtils.isEmpty(pfConfig.getQuery())) {
-                    try {
-                        request += "&query=";
-                        if(!pfConfig.getQuery().toLowerCase().contains("grouping:off")
-                                && !pfConfig.getQuery().toLowerCase().contains("grouping:on")){
-                            request += "grouping:off ";
-                        }
-                        request += URLEncoder.encode(pfConfig.getQuery(), "UTF-8");
-                    } catch (UnsupportedEncodingException ex) {
-                        throw new AbortException(ex.getMessage());
-                    }
-
-                }
+                String request = KlocworkUtil.createKlocworkAPIRequest(
+                    "search", pfConfig.getQuery(), envVars);
                 logger.logMessage("Condition Name : " + pfConfig.getConditionName());
                 logger.logMessage("Using query: " + request);
-                JSONArray response;
-
-                try {
-                    String[] ltokenLine = KlocworkUtil.getLtokenValues(envVars, launcher);
-                    KlocworkApiConnection kwService = new KlocworkApiConnection(
-                                    envVars.get(KlocworkConstants.KLOCWORK_URL),
-                                    ltokenLine[KlocworkConstants.LTOKEN_USER_INDEX],
-                                    ltokenLine[KlocworkConstants.LTOKEN_HASH_INDEX]);
-                    response = kwService.sendRequest(request);
-                } catch (IOException ex) {
-                    throw new AbortException("Error: failed to connect to the Klocwork" +
-                        " web API.\nCause: " + ex.getMessage());
-                }
+                
+                JSONArray response = KlocworkUtil.getJSONRespose(request, envVars, launcher);
 
                 logger.logMessage("Number of issues returned : " + Integer.toString(response.size()));
                 logger.logMessage("Configured Threshold : " + pfConfig.getThreshold());

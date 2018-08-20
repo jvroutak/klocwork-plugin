@@ -29,8 +29,9 @@
  *******************************************************************************/
 package com.thalesgroup.hudson.plugins.klocwork.config;
 
-import java.io.Serializable;
 import org.kohsuke.stapler.DataBoundConstructor;
+
+import java.io.Serializable;
 
 public class KloConfigNoKwinspectreport implements Serializable {
 

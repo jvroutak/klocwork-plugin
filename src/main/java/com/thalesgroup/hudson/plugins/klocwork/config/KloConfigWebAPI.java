@@ -23,8 +23,9 @@
  *******************************************************************************/
 package com.thalesgroup.hudson.plugins.klocwork.config;
 
-import java.io.Serializable;
 import org.kohsuke.stapler.DataBoundConstructor;
+
+import java.io.Serializable;
 
 public class KloConfigWebAPI implements Serializable {
     private String webAPIQuery;

@@ -1,12 +1,13 @@
 package com.emenda.klocwork;
 
-import hudson.model.*;
-import org.json.*;
-
 import com.emenda.klocwork.util.KlocworkUtil;
+import hudson.model.Action;
+import hudson.model.Job;
+import hudson.model.Run;
+import org.json.JSONObject;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class KlocworkProjectAction implements Action {
 

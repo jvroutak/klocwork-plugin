@@ -22,16 +22,12 @@ package com.thalesgroup.hudson.plugins.klocwork.util;
 import com.emenda.kwjlib.KWApi;
 import hudson.model.BuildListener;
 import hudson.remoting.Callable;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Serializable;
-import java.net.URL;
-import java.util.ArrayList;
-import org.emendashaded.json.JSONObject;
 import org.apache.commons.lang.StringEscapeUtils;
+import org.emendashaded.json.JSONObject;
 import org.jenkinsci.remoting.RoleChecker;
+
+import java.io.*;
+import java.util.ArrayList;
 
 /**
  * KloXMLGenerator uses the kwjlib library to connect to the Klocwork server and

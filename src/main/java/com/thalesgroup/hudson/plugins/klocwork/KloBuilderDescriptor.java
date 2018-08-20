@@ -24,7 +24,6 @@
 package com.thalesgroup.hudson.plugins.klocwork;
 
 import com.thalesgroup.hudson.plugins.klocwork.model.KloInstallation;
-import com.thalesgroup.hudson.plugins.klocwork.model.KloOption;
 import hudson.CopyOnWrite;
 import hudson.Util;
 import hudson.model.AbstractProject;

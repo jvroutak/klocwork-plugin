@@ -22,11 +22,7 @@ package com.thalesgroup.hudson.plugins.klocwork;
 import com.thalesgroup.hudson.plugins.klocwork.model.KloInstallation;
 import com.thalesgroup.hudson.plugins.klocwork.util.KloBuildInfo;
 import com.thalesgroup.hudson.plugins.klocwork.util.UserAxisConverter;
-import hudson.EnvVars;
-import hudson.Extension;
-import hudson.FilePath;
-import hudson.Launcher;
-import hudson.Util;
+import hudson.*;
 import hudson.matrix.Combination;
 import hudson.matrix.MatrixConfiguration;
 import hudson.model.AbstractBuild;
@@ -34,21 +30,16 @@ import hudson.model.BuildListener;
 import hudson.model.Descriptor;
 import hudson.tasks.Builder;
 import hudson.util.ArgumentListBuilder;
-import java.io.BufferedReader;
+import jenkins.model.ArtifactManager;
+import org.kohsuke.stapler.DataBoundConstructor;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import jenkins.model.ArtifactManager;
-import org.kohsuke.stapler.DataBoundConstructor;
 
 public class KloBuilder extends Builder {
 

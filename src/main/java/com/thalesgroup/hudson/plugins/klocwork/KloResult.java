@@ -26,18 +26,12 @@ package com.thalesgroup.hudson.plugins.klocwork;
 import com.thalesgroup.hudson.plugins.klocwork.config.KloConfig;
 import com.thalesgroup.hudson.plugins.klocwork.model.KloReport;
 import com.thalesgroup.hudson.plugins.klocwork.model.KloSourceContainer;
-import com.thalesgroup.hudson.plugins.klocwork.model.KloWorkspaceFile;
 import com.thalesgroup.hudson.plugins.klocwork.util.KloSummary;
 import hudson.model.AbstractBuild;
 import hudson.model.Api;
-import hudson.model.Item;
-import org.apache.commons.lang.StringUtils;
-import org.kohsuke.stapler.StaplerRequest;
-import org.kohsuke.stapler.StaplerResponse;
 
 import java.io.IOException;
 import java.io.Serializable;
-import java.util.Map;
 
 public class KloResult implements Serializable {
 

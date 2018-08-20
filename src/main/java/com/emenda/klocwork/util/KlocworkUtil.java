@@ -2,16 +2,13 @@ package com.emenda.klocwork.util;
 
 import com.emenda.klocwork.KlocworkConstants;
 import com.emenda.klocwork.services.KlocworkApiConnection;
-
-import net.sf.json.JSONArray;
-
-import org.apache.commons.lang3.StringUtils;
 import hudson.AbortException;
 import hudson.EnvVars;
 import hudson.FilePath;
 import hudson.Launcher;
 import hudson.model.TaskListener;
 import hudson.util.ArgumentListBuilder;
+import net.sf.json.JSONArray;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.*;

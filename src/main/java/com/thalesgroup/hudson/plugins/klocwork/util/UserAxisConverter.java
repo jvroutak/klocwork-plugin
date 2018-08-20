@@ -8,6 +8,7 @@ package com.thalesgroup.hudson.plugins.klocwork.util;
 import hudson.matrix.Combination;
 import hudson.matrix.MatrixConfiguration;
 import hudson.model.AbstractBuild;
+
 import java.util.Map;
 
 /**

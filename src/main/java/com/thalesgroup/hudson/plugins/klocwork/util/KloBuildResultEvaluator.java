@@ -26,6 +26,7 @@ package com.thalesgroup.hudson.plugins.klocwork.util;
 import com.thalesgroup.hudson.plugins.klocwork.config.KloConfig;
 import hudson.model.BuildListener;
 import hudson.model.Result;
+
 import java.util.Iterator;
 import java.util.Map;
 

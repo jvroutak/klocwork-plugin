@@ -2,18 +2,16 @@ package com.emenda.klocwork;
 
 import com.emenda.klocwork.config.KlocworkReportConfig;
 import com.emenda.klocwork.util.KlocworkUtil;
-
 import hudson.EnvVars;
 import hudson.model.Action;
 import hudson.model.Run;
 import jenkins.tasks.SimpleBuildStep;
 
 import java.io.UnsupportedEncodingException;
-
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Map;
 import java.util.List;
+import java.util.Map;
 
 public class KlocworkBuildAction implements Action, SimpleBuildStep.LastBuildAction {
 

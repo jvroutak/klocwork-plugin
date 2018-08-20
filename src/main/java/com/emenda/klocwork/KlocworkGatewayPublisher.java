@@ -2,18 +2,9 @@ package com.emenda.klocwork;
 
 import com.emenda.klocwork.config.KlocworkGatewayConfig;
 import com.emenda.klocwork.config.KlocworkGatewayServerConfig;
-import com.emenda.klocwork.services.KlocworkApiConnection;
 import com.emenda.klocwork.util.KlocworkUtil;
 import com.emenda.klocwork.util.KlocworkXMLReportParser;
 import hudson.*;
-import com.emenda.klocwork.util.KlocworkUtil;
-import com.emenda.klocwork.util.KlocworkXMLReportParser;
-
-import hudson.AbortException;
-import hudson.Launcher;
-import hudson.EnvVars;
-import hudson.Extension;
-import hudson.FilePath;
 import hudson.model.AbstractProject;
 import hudson.model.Result;
 import hudson.model.Run;
@@ -24,17 +15,10 @@ import hudson.tasks.Publisher;
 import jenkins.tasks.SimpleBuildStep;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-import org.apache.commons.lang3.StringUtils;
-import jenkins.tasks.SimpleBuildStep;
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.StaplerRequest;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.lang.InterruptedException;
 
 public class KlocworkGatewayPublisher extends Publisher implements SimpleBuildStep {
 

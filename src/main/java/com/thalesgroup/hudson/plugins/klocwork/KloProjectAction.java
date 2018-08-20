@@ -29,10 +29,7 @@ import com.thalesgroup.hudson.plugins.klocwork.model.AbstractKloProjectAction;
 import hudson.model.AbstractBuild;
 import hudson.model.AbstractProject;
 import hudson.model.Result;
-import org.kohsuke.stapler.StaplerRequest;
-import org.kohsuke.stapler.StaplerResponse;
 
-import java.io.IOException;
 import java.util.HashMap;
 
 

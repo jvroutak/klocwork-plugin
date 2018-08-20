@@ -30,6 +30,10 @@ public class KlocworkReportConfig extends AbstractDescribableImpl<KlocworkReport
         return displayChart;
     }
 
+    public void setDisplayChart(boolean displayChart) {
+        this.displayChart = displayChart;
+    }
+
     public String getQuery() {
         return query;
     }
